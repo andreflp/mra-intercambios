@@ -9,6 +9,7 @@
 
 <script>
 import Toolbar from "@/app/default/components/Toolbar"
+import Main from "@/app/main/Index"
 export default {
   name: "Default",
   components: {

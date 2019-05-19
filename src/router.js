@@ -21,9 +21,9 @@ export default new Router({
   routes: [
     route("/login", "app/login/Index", "Login", "Login"),
     route("/", "app/default/Index", "Default", "Default", [
-      route("/main", "app/main/Index", "Main", "Main"),
+      route("", "app/main/Index", "Pacotes", "Pacotes"),
       route("/orcamentos", "app/orcamentos/Index", "Orcamento", "Orcamento")
     ]),
-    { path: "*", component: Main }
+    { path: "", component: Main }
   ]
 })

@@ -29,7 +29,7 @@ export default {
     drawer: null,
     items: [{ title: "Login", route: "login" }],
     itemsTab: [
-      { title: "Pacotes", route: "main" },
+      { title: "Pacotes", route: "/" },
       { title: "Orçamentos", route: "orcamentos" },
       { title: "Conta", route: "login" }
     ]
