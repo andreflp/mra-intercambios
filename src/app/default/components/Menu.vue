@@ -10,7 +10,7 @@
             <a href="#!" class="body-2 black--text">EDIT</a>
           </v-flex>
         </v-layout>
-        <v-list-group
+        <!-- <v-list-group
           v-else-if="item.children"
           :key="item.text"
           v-model="item.model"
@@ -32,8 +32,8 @@
               <v-list-tile-title>{{ child.text }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-        </v-list-group>
-        <v-list-tile v-else :key="item.text">
+        </v-list-group>-->
+        <v-list-tile v-else :key="item.text" :to="item.route">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -52,30 +52,30 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: "contacts", text: "Pacotes" },
-      { icon: "history", text: "Cursos" },
-      { icon: "content_copy", text: "Duplicates" },
-      {
-        icon: "keyboard_arrow_up",
-        "icon-alt": "keyboard_arrow_down",
-        text: "Labels",
-        model: true,
-        children: [{ icon: "add", text: "Create label" }]
-      },
-      {
-        icon: "keyboard_arrow_up",
-        "icon-alt": "keyboard_arrow_down",
-        text: "More",
-        model: false,
-        children: [
-          { text: "Import" },
-          { text: "Export" },
-          { text: "Print" },
-          { text: "Undo changes" },
-          { text: "Other contacts" }
-        ]
-      },
-      { icon: "settings", text: "Settings" }
+      { icon: "all_inbox", text: "Pacotes", route: "main" },
+      { icon: "assignment", text: "Orçamentos", route: "orcamentos" }
+      // { icon: "content_copy", text: "Duplicates" },
+      // {
+      //   icon: "keyboard_arrow_up",
+      //   "icon-alt": "keyboard_arrow_down",
+      //   text: "Labels",
+      //   model: true,
+      //   children: [{ icon: "add", text: "Create label" }]
+      // },
+      // {
+      //   icon: "keyboard_arrow_up",
+      //   "icon-alt": "keyboard_arrow_down",
+      //   text: "More",
+      //   model: false,
+      //   children: [
+      //     { text: "Import" },
+      //     { text: "Export" },
+      //     { text: "Print" },
+      //     { text: "Undo changes" },
+      //     { text: "Other contacts" }
+      //   ]
+      // },
+      // { icon: "settings", text: "Settings" }
     ]
   })
 }

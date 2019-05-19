@@ -1,18 +1,19 @@
 <template>
   <v-app id="inspire">
-    <v-container style="margin-top: 20px">
-      <v-layout row wrap justify-center class="main-container">
-        <v-flex xs4 style="padding: 0px 15px 0px 15px">
+    <v-container style="margin-top: 70px" class="main-container">
+      <h2 style="margin-left: 15px">Filtrar por:</h2>
+      <v-layout row wrap justify-center>
+        <v-flex xs4 class="btn-space">
           <v-autocomplete :items="countries" item-value="value" item-text="name" label="País"></v-autocomplete>
         </v-flex>
-        <v-flex xs4 style="padding: 0px 15px 0px 15px">
-          <v-autocomplete :items="courses" item-value="value" item-text="name" label="Curso"></v-autocomplete>
+        <v-flex xs4 class="btn-space">
+          <v-autocomplete :items="languages" item-value="value" item-text="name" label="Línguas"></v-autocomplete>
         </v-flex>
-        <v-flex xs4 style="padding: 0px 15px 0px 15px">
+        <v-flex xs4 class="btn-space">
           <v-autocomplete :items="prices" item-value="value" item-text="name" label="Preço"></v-autocomplete>
         </v-flex>
       </v-layout>
-      <v-layout row wrap class="main-container">
+      <v-layout row wrap style="margin-top: 70px">
         <v-flex v-for="card in cards" :key="card.title" style="padding: 0px 10px 40px 10px" xs3>
           <Card
             :title="card.title"
@@ -90,13 +91,13 @@ export default {
       { name: "Irlanda", value: 5 },
       { name: "Japão", value: 6 }
     ],
-    courses: [
-      { name: "Administração", value: 4 },
-      { name: "Ciência da Computação", value: 1 },
-      { name: "Ciências Contábeis", value: 3 },
-      { name: "Design", value: 6 },
-      { name: "Direito", value: 5 },
-      { name: "Engenharia da Computação", value: 2 }
+    languages: [
+      { name: "Inglês", value: 4 },
+      { name: "Espanhol", value: 1 },
+      { name: "Alemão", value: 3 },
+      { name: "Francês", value: 6 },
+      { name: "Japones", value: 5 },
+      { name: "Italiano", value: 2 }
     ],
     prices: [
       { name: "Maiores", value: 4 },
@@ -109,7 +110,11 @@ export default {
 
 <style>
 .main-container {
-  padding: 0px 100px 100px 100px;
+  padding: 0px 270px 100px 270px;
+}
+
+.btn-space {
+  padding: 0px 15px 0px 15px;
 }
 </style>
 

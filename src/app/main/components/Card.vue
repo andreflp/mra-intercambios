@@ -13,7 +13,7 @@
           </div>
         </v-card-title>
         <v-card-actions style="margin-top: -20px;" class="justify-center">
-          <v-btn style="width: 100%;" class="text-xs-center" color="primary">Ver Detalhes</v-btn>
+          <Modal/>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import Modal from "./Modal"
 export default {
   props: {
     title: String,
@@ -28,6 +29,10 @@ export default {
     image: String,
     period: String,
     stay: String
+  },
+
+  components: {
+    Modal
   }
 }
 </script>

@@ -1,21 +1,24 @@
 <template>
-  <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" color="blue darken-3" dark app fixed>
-    <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-      <span class="hidden-sm-and-down">MRA</span>
-    </v-toolbar-title>
-    <v-text-field
-      flat
-      solo-inverted
-      hide-details
-      prepend-inner-icon="search"
-      label="Pesquisar"
-      class="hidden-sm-and-down"
-    />
+  <v-toolbar color="blue darken-3" dark tabs app fixed>
     <v-spacer></v-spacer>
-    <span style="font-size: 17px">Olá, User</span>
-    <v-btn icon>
-      <v-icon style="font-size: 30px;">account_circle</v-icon>
-    </v-btn>
+    <v-layout row wrap align-center style="margin-top: 5px;">
+      <v-toolbar-title style="margin-right: 20px;">MRA</v-toolbar-title>
+      <v-flex class="text-xs-center">
+        <v-text-field flat label="Pesquisar" prepend-inner-icon="search" solo-inverted/>
+      </v-flex>
+      <v-toolbar-items style="margin-left: 20px;">
+        <v-btn icon>
+          <v-icon>account_circle</v-icon>
+        </v-btn>
+      </v-toolbar-items>
+    </v-layout>
+    <v-spacer></v-spacer>
+
+    <template v-slot:extension>
+      <v-tabs v-model="tabs" centered color="transparent" slider-color="white">
+        <v-tab v-for="item in itemsTab" :key="item.title" :to="item.route">{{ item.title }}</v-tab>
+      </v-tabs>
+    </template>
   </v-toolbar>
 </template>
 
@@ -24,32 +27,14 @@ export default {
   data: () => ({
     dialog: false,
     drawer: null,
-    items: [
-      { icon: "contacts", text: "Pacotes" },
-      { icon: "history", text: "Cursos" },
-      { icon: "content_copy", text: "Duplicates" },
-      {
-        icon: "keyboard_arrow_up",
-        "icon-alt": "keyboard_arrow_down",
-        text: "Labels",
-        model: true,
-        children: [{ icon: "add", text: "Create label" }]
-      },
-      {
-        icon: "keyboard_arrow_up",
-        "icon-alt": "keyboard_arrow_down",
-        text: "More",
-        model: false,
-        children: [
-          { text: "Import" },
-          { text: "Export" },
-          { text: "Print" },
-          { text: "Undo changes" },
-          { text: "Other contacts" }
-        ]
-      },
-      { icon: "settings", text: "Settings" }
+    items: [{ title: "Login", route: "login" }],
+    itemsTab: [
+      { title: "Pacotes", route: "main" },
+      { title: "Orçamentos", route: "orcamentos" },
+      { title: "Conta", route: "login" }
     ]
   })
 }
 </script>
+
+

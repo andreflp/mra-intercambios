@@ -19,8 +19,10 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
+    route("/login", "app/login/Index", "Login", "Login"),
     route("/", "app/default/Index", "Default", "Default", [
-      route("/main", "app/main/Index", "Main", "Main")
+      route("/main", "app/main/Index", "Main", "Main"),
+      route("/orcamentos", "app/orcamentos/Index", "Orcamento", "Orcamento")
     ]),
     { path: "*", component: Main }
   ]
