@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <div>
     <Toolbar/>
-    <v-layout wrap main-container style="margin-top: 40px;">
+    <v-layout wrap main-container style="margin-top: 80px;" v-if="!logado">
       <v-flex xs5 input-space>
         <h1>Login</h1>
         <SignIn/>
@@ -14,12 +14,14 @@
         <SignUp/>
       </v-flex>
     </v-layout>
-  </v-container>
+    <Perfil main-container style="margin-top: 180px;" v-else/>
+  </div>
 </template>
 
 <script>
 import SignIn from "./sign-in/Index"
 import SignUp from "./sign-up/Index"
+import Perfil from "@/app/perfil/Index"
 import Toolbar from "@/app/default/components/Toolbar"
 export default {
   name: "Login",
@@ -27,7 +29,31 @@ export default {
   components: {
     Toolbar,
     SignIn,
-    SignUp
+    SignUp,
+    Perfil
+  },
+
+  data: () => ({
+    logado: false
+  }),
+
+  mounted() {
+    var logado = localStorage.getItem("logado")
+    if (logado != null) {
+      this.logado = true
+    } else {
+      this.logado = false
+    }
+  },
+
+  created() {
+    this.$root.$on("logado", this.getLogado)
+  },
+
+  methods: {
+    getLogado(logado) {
+      this.logado = logado
+    }
   }
 }
 </script>

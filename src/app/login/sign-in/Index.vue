@@ -1,17 +1,19 @@
 <template>
   <form>
     <v-text-field
-      v-model="form.user"
-      v-validate="'required|min:10'"
-      :error-messages="errors.collect('usuário')"
       label="E-mail"
+      v-model="form.usuario"
+      v-validate="'required|email'"
+      :error-messages="errors.collect('email')"
       data-vv-name="email"
       required
     ></v-text-field>
     <v-text-field
-      v-model="form.password"
-      :error-messages="errors.collect('senha')"
       label="Senha"
+      browser-autocomplete="new-password"
+      v-model="form.senha"
+      v-validate="'required'"
+      :error-messages="errors.collect('senha')"
       data-vv-name="senha"
       required
       :append-icon="show ? 'visibility' : 'visibility_off'"
@@ -32,20 +34,35 @@ export default {
 
   data: () => ({
     form: {
-      user: "",
-      password: ""
+      usuario: "",
+      senha: ""
     },
-    show: false
+    show: false,
+    logado: false
   }),
 
   methods: {
     submit() {
-      this.$validator.validateAll()
+      this.$validator.validateAll().then(valid => {
+        if (valid) {
+          let usuario = JSON.parse(localStorage.getItem(`${this.form.usuario}`))
+          if (usuario == null || usuario.senha != this.form.senha) {
+            alert("Email ou senha incorretos")
+          } else {
+            this.logado = true
+            this.$router.push("/login")
+            this.$root.$emit("logado", this.logado)
+            localStorage.setItem("logado", JSON.stringify(usuario))
+
+            this.clear()
+          }
+        }
+      })
     },
 
     clear() {
-      this.form.user = ""
-      this.form.password = ""
+      this.form.usuario = ""
+      this.form.senha = ""
       this.$validator.reset()
     }
   }
