@@ -15,10 +15,12 @@
       </v-flex>
     </v-layout>
     <Perfil main-container style="margin-top: 180px;" v-else/>
+    <SnackBar/>
   </div>
 </template>
 
 <script>
+import SnackBar from "@/app/main/components/SnackBar"
 import SignIn from "./sign-in/Index"
 import SignUp from "./sign-up/Index"
 import Perfil from "@/app/perfil/Index"
@@ -30,11 +32,13 @@ export default {
     Toolbar,
     SignIn,
     SignUp,
-    Perfil
+    Perfil,
+    SnackBar
   },
 
   data: () => ({
-    logado: false
+    logado: false,
+    snackBar: false
   }),
 
   mounted() {
@@ -62,10 +66,6 @@ export default {
 .input-space {
   margin-top: 120px;
   padding: 0px 0px 0px 0px;
-}
-
-.main-container {
-  padding: 0px 270px 100px 270px;
 }
 
 .divider-align {

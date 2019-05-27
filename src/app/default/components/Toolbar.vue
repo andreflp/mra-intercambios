@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="blue darken-3" dark tabs app fixed>
+  <v-toolbar color="light-blue accent-4" dark tabs app fixed>
     <v-spacer></v-spacer>
     <v-layout row wrap align-center style="margin-top: 5px;">
       <v-toolbar-title style="margin-right: 20px;">MRA</v-toolbar-title>
@@ -32,27 +32,40 @@
       </v-toolbar-items>
     </v-layout>
     <v-spacer></v-spacer>
-
     <template v-slot:extension>
       <v-tabs centered color="transparent" slider-color="white">
-        <v-tab v-for="item in itemsTab" :key="item.title" :to="item.route">{{ item.title }}</v-tab>
+        <v-tab to="/">Pacotes</v-tab>
+        <v-tab ref="menuActivator">Orçamentos</v-tab>
+        <v-tab to="/login">Conta</v-tab>
       </v-tabs>
     </template>
+    <v-menu :activator="menuActivator" offset-y right bottom>
+      <v-list class="grey lighten-3">
+        <v-list-tile
+          tag="a"
+          v-for="item in orcamentos"
+          :key="item.title"
+          :to="item.route"
+        >{{ item.title }}</v-list-tile>
+      </v-list>
+    </v-menu>
   </v-toolbar>
 </template>
 
 <script>
 export default {
+  components: {},
+
   data: () => ({
     dialog: false,
     drawer: null,
     items: [{ title: "Login", route: "login" }],
-    itemsTab: [
-      { title: "Pacotes", route: "/" },
-      { title: "Orçamentos", route: "orcamentos" },
-      { title: "Conta", route: "login" }
+    orcamentos: [
+      { title: "Novo ", route: "orcamento" },
+      { title: "Solicitados", route: "orcamentos" }
     ],
-    logado: false
+    logado: false,
+    menuActivator: null
   }),
 
   mounted() {
@@ -62,6 +75,7 @@ export default {
     } else {
       this.logado = false
     }
+    this.menuActivator = this.$refs.menuActivator.$el
   },
 
   created() {

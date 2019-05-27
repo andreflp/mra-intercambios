@@ -120,6 +120,7 @@ export default {
       this.$validator.validateAll().then(valid => {
         if (valid) {
           localStorage.setItem(`${this.form.email}`, JSON.stringify(this.form))
+          this.$root.$emit("showSnackSignUp", this.snackbar)
           this.clear()
         }
       })

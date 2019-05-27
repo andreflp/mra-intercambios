@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-container style="margin-top: 70px" class="main-container">
+    <v-container mg-top class="main-container">
       <h2 style="margin-left: 15px">Filtrar por:</h2>
       <v-layout row wrap justify-center>
         <v-flex xs4 class="btn-space">
@@ -14,7 +14,15 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap style="margin-top: 70px">
-        <v-flex v-for="card in cards" :key="card.title" style="padding: 0px 10px 40px 10px" xs3>
+        <v-flex
+          v-for="card in cards"
+          :key="card.title"
+          style="padding: 0px 10px 40px 10px"
+          lg3
+          md4
+          sm12
+          xs12
+        >
           <Card
             :title="card.title"
             :image="card.src"
@@ -109,10 +117,6 @@ export default {
 </script>
 
 <style>
-.main-container {
-  padding: 0px 270px 100px 270px;
-}
-
 .btn-space {
   padding: 0px 15px 0px 15px;
 }

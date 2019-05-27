@@ -67,6 +67,27 @@
     <v-flex offset-xs4 xs8>
       <v-btn color="primary" @click="submit">Editar</v-btn>
     </v-flex>
+
+    <v-layout row justify-center>
+      <v-dialog v-model="dialog" persistent max-width="290">
+        <template v-slot:activator="{ on }">
+          <v-flex xs4 style="margin-top: 60px;">
+            <a style="color: red;" v-on="on">DELETAR CONTA?</a>
+          </v-flex>
+        </template>
+        <v-card>
+          <v-card-title color="light-yellow accent-4">
+            <h4>Aviso</h4>
+          </v-card-title>
+          <v-card-text>Deseja realmente deletar sua conta?</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="primary" flat @click="dialog = false">Cancelar</v-btn>
+            <v-btn color="red" flat @click="dialog = false">Confirmar</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-layout>
   </v-layout>
 </template>
 
@@ -78,6 +99,7 @@ export default {
   },
 
   data: () => ({
+    dialog: false,
     usuario: {},
     masks,
     show: false

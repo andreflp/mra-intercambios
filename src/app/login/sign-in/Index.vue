@@ -38,7 +38,8 @@ export default {
       senha: ""
     },
     show: false,
-    logado: false
+    logado: false,
+    snackbar: true
   }),
 
   methods: {
@@ -52,6 +53,7 @@ export default {
             this.logado = true
             this.$router.push("/login")
             this.$root.$emit("logado", this.logado)
+            this.$root.$emit("showSnack", this.snackbar)
             localStorage.setItem("logado", JSON.stringify(usuario))
 
             this.clear()
