@@ -19,12 +19,6 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
-    route(
-      "/funcionario",
-      "app/funcionario/Index",
-      "Funcionario",
-      "Funcionario"
-    ),
     route("/login", "app/login/Index", "Login", "Login"),
     route("/", "app/default/Index", "Default", "Default", [
       route("", "app/main/Index", "Pacotes", "Pacotes"),

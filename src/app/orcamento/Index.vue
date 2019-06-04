@@ -44,8 +44,8 @@
       ></v-textarea>
     </v-flex>
     <v-flex offset-xs4 xs4>
-      <v-btn color="primary">Enviar</v-btn>
-      <v-btn color="primary">Limpar</v-btn>
+      <v-btn color="#CD5350" dark>Enviar</v-btn>
+      <v-btn color="#CD5350" dark>Limpar</v-btn>
     </v-flex>
   </v-layout>
 </template>

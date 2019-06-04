@@ -21,8 +21,8 @@
       @click:append="show = !show"
     ></v-text-field>
 
-    <v-btn color="primary" @click="submit">Login</v-btn>
-    <v-btn color="primary" @click="clear">Limpar</v-btn>
+    <v-btn color="#CD5350" dark @click="submit">Login</v-btn>
+    <v-btn color="#CD5350" dark @click="clear">Limpar</v-btn>
   </form>
 </template>
 

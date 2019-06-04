@@ -49,7 +49,7 @@ export default {
           tipo: "Trabalho",
           periodo: "6 Mêses",
           preco: "R$ 6.999,90",
-          situacao: "Pendente"
+          situacao: "Finalizado"
         },
         {
           pais: "Inglaterra",
@@ -62,7 +62,7 @@ export default {
           pais: "Irlanda",
           tipo: "Negócios",
           periodo: "6 Mêses",
-          preco: "R$ 4.750,00",
+          preco: "-",
           situacao: "Pendente"
         }
       ]

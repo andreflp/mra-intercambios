@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar color="light-blue accent-4" dark tabs app fixed>
+  <v-toolbar color="#CD5350" dark tabs app fixed>
     <v-spacer></v-spacer>
     <v-layout row wrap align-center style="margin-top: 5px;">
       <v-toolbar-title style="margin-right: 20px;">MRA</v-toolbar-title>

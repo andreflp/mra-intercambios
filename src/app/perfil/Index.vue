@@ -1,6 +1,6 @@
 <template>
   <v-layout wrap>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <h2 style="margin-bottom: 10px;">Meu Perfil</h2>
       <v-text-field
         label="Nome"
@@ -11,7 +11,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <v-text-field
         label="Sobrenome"
         v-model="usuario.sobrenome"
@@ -21,7 +21,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <v-text-field
         label="CPF"
         v-model="usuario.cpf"
@@ -32,7 +32,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <v-text-field
         label="E-mail"
         v-model="usuario.email"
@@ -42,7 +42,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <v-text-field
         label="Data de Nascimento"
         v-model="usuario.dataNasc"
@@ -53,7 +53,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
       <v-text-field
         label="Telefone"
         v-model="usuario.telefone"
@@ -64,30 +64,40 @@
         required
       />
     </v-flex>
-    <v-flex offset-xs4 xs8>
-      <v-btn color="primary" @click="submit">Editar</v-btn>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+      <v-btn color="#CD5350" dark @click="submit">Editar</v-btn>
     </v-flex>
 
-    <v-layout row justify-center>
-      <v-dialog v-model="dialog" persistent max-width="290">
-        <template v-slot:activator="{ on }">
-          <v-flex xs4 style="margin-top: 60px;">
-            <a style="color: red;" v-on="on">DELETAR CONTA?</a>
-          </v-flex>
-        </template>
-        <v-card>
-          <v-card-title color="light-yellow accent-4">
-            <h4>Aviso</h4>
-          </v-card-title>
-          <v-card-text>Deseja realmente deletar sua conta?</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" flat @click="dialog = false">Cancelar</v-btn>
-            <v-btn color="red" flat @click="dialog = false">Confirmar</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-layout>
+    <v-dialog v-model="dialog" persistent max-width="290">
+      <template v-slot:activator="{ on }">
+        <v-flex
+          offset-lg4
+          lg4
+          offset-md3
+          md6
+          offset-sm2
+          sm8
+          offset-xs2
+          xs8
+          style="margin-top: 60px;"
+        >
+          <a style="color: #CD5350;" v-on="on">DELETAR CONTA?</a>
+        </v-flex>
+      </template>
+      <v-card>
+        <v-card-title color="light-yellow accent-4">
+          <h4>Aviso</h4>
+        </v-card-title>
+        <v-card-text>Deseja realmente deletar sua conta?</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn @click="dialog = false" small>
+            <span style="color: #CD5350">Cancelar</span>
+          </v-btn>
+          <v-btn color="#CD5350" dark small @click="dialog = false">Confirmar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-layout>
 </template>
 

@@ -1,54 +1,46 @@
 <template>
   <v-layout row justify-center>
-    <v-dialog v-model="dialog" persistent max-width="600px">
+    <v-dialog v-model="dialog" persistent max-width="700px">
       <template v-slot:activator="{ on }">
-        <v-btn style="width: 100%;" class="text-xs-center" v-on="on" color="primary">Ver Detalhes</v-btn>
+        <v-btn
+          style="width: 100%;"
+          class="text-xs-center"
+          v-on="on"
+          dark
+          color="#CD5350"
+        >Ver Detalhes</v-btn>
       </template>
       <v-card>
-        <v-card-title>
-          <span class="headline">User Profile</span>
+        <v-img class="white--text" max-height="400px" :src="image"></v-img>
+        <v-card-title class="padding-bottom: 0;">
+          <div>
+            <div class="headline">{{ title }}</div>
+            <br>
+            <div>
+              <span style="font-weight: bold">Informações:</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+            <br>
+            <div>
+              <span style="font-weight: bold">Periodo:</span>
+              {{ period }}
+            </div>
+            <div>
+              <span style="font-weight: bold">Estadia:</span>
+              {{ stay }}
+            </div>
+            <div>
+              <span style="font-weight: bold">Preço:</span>
+              {{ price }}
+            </div>
+            <br>
+          </div>
         </v-card-title>
-        <v-card-text>
-          <v-container grid-list-md>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal first name*" required></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
-                  required
-                ></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Email*" required></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Password*" type="password" required></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6>
-                <v-select :items="['0-17', '18-29', '30-54', '54+']" label="Age*" required></v-select>
-              </v-flex>
-              <v-flex xs12 sm6>
-                <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
-                ></v-autocomplete>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          <small>*indicates required field</small>
-        </v-card-text>
-        <v-card-actions>
+        <v-card-actions style="margin-top: -20px;" class="justify-center">
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" flat @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" flat @click="dialog = false">Save</v-btn>
+          <v-btn color="light-grey" @click="dialog = false">
+            <span style="color: #CD5350">Fechar</span>
+          </v-btn>
+          <v-btn color="#CD5350" dark @click="dialog = false">Orçamento</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -57,6 +49,14 @@
 
 <script>
 export default {
+  props: {
+    title: String,
+    price: [String, Number],
+    image: String,
+    period: String,
+    stay: String
+  },
+
   data: () => ({
     dialog: false
   })

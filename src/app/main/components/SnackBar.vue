@@ -10,7 +10,7 @@
     :vertical="mode === 'vertical'"
   >
     {{ text }}
-    <v-btn color="light-blue accent-4" flat @click="snackbar = false">Fechar</v-btn>
+    <v-btn color="#CD5350" flat @click="snackbar = false">Fechar</v-btn>
   </v-snackbar>
 </template>
 

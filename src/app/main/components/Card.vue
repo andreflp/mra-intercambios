@@ -13,7 +13,7 @@
           </div>
         </v-card-title>
         <v-card-actions style="margin-top: -20px;" class="justify-center">
-          <Modal/>
+          <Modal :title="title" :price="price" :image="image" :period="period" :stay="stay"/>
         </v-card-actions>
       </v-card>
     </v-flex>

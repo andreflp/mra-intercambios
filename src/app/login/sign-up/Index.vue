@@ -88,8 +88,8 @@
       ></v-text-field>
     </v-flex>
 
-    <v-btn color="primary" @click="submit">Enviar</v-btn>
-    <v-btn color="primary" @click="clear">Limpar</v-btn>
+    <v-btn color="#CD5350" dark @click="submit">Enviar</v-btn>
+    <v-btn color="#CD5350" dark @click="clear">Limpar</v-btn>
   </v-layout>
 </template>
 
