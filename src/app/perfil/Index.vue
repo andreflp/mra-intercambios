@@ -1,6 +1,6 @@
 <template>
   <v-layout wrap>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <h2 style="margin-bottom: 10px;">Meu Perfil</h2>
       <v-text-field
         label="Nome"
@@ -11,7 +11,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         label="Sobrenome"
         v-model="usuario.sobrenome"
@@ -21,7 +21,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         label="CPF"
         v-model="usuario.cpf"
@@ -32,7 +32,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         label="E-mail"
         v-model="usuario.email"
@@ -42,7 +42,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         label="Data de Nascimento"
         v-model="usuario.dataNasc"
@@ -53,7 +53,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         label="Telefone"
         v-model="usuario.telefone"
@@ -64,7 +64,7 @@
         required
       />
     </v-flex>
-    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs2 xs8>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-btn color="#CD5350" dark @click="submit">Editar</v-btn>
     </v-flex>
 
@@ -77,8 +77,8 @@
           md6
           offset-sm2
           sm8
-          offset-xs2
-          xs8
+          offset-xs1
+          xs10
           style="margin-top: 60px;"
         >
           <a style="color: #CD5350;" v-on="on">DELETAR CONTA?</a>

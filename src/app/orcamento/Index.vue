@@ -1,6 +1,6 @@
 <template>
   <v-layout wrap mg-top>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <h2>Faça seu orçamento:</h2>
       <v-autocomplete
         v-model="form.pais"
@@ -13,7 +13,7 @@
         required
       ></v-autocomplete>
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-autocomplete
         v-model="form.tipo"
         :error-messages="errors.collect('tipo de intêrcambio')"
@@ -25,7 +25,7 @@
         required
       ></v-autocomplete>
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-text-field
         v-model="form.periodo"
         :error-messages="errors.collect('período')"
@@ -34,7 +34,7 @@
         required
       ></v-text-field>
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-textarea
         v-model="form.obs"
         :error-messages="errors.collect('observação')"
@@ -43,7 +43,7 @@
         required
       ></v-textarea>
     </v-flex>
-    <v-flex offset-xs4 xs4>
+    <v-flex offset-lg4 lg4 offset-md3 md6 offset-sm2 sm8 offset-xs1 xs10>
       <v-btn color="#CD5350" dark>Enviar</v-btn>
       <v-btn color="#CD5350" dark>Limpar</v-btn>
     </v-flex>

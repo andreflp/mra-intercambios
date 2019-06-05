@@ -2,14 +2,14 @@
   <v-app id="inspire">
     <v-container mg-top class="main-container">
       <h2 style="margin-left: 15px">Filtrar por:</h2>
-      <v-layout row wrap justify-center>
-        <v-flex xs4 class="btn-space">
+      <v-layout row wrap>
+        <v-flex lg4 md4 sm4 xs12 class="btn-space">
           <v-autocomplete :items="countries" item-value="value" item-text="name" label="País"></v-autocomplete>
         </v-flex>
-        <v-flex xs4 class="btn-space">
+        <v-flex lg4 md4 sm4 xs12 class="btn-space">
           <v-autocomplete :items="languages" item-value="value" item-text="name" label="Línguas"></v-autocomplete>
         </v-flex>
-        <v-flex xs4 class="btn-space">
+        <v-flex lg4 md4 sm4 xs12 class="btn-space">
           <v-autocomplete :items="prices" item-value="value" item-text="name" label="Preço"></v-autocomplete>
         </v-flex>
       </v-layout>
@@ -20,7 +20,7 @@
           style="padding: 0px 10px 40px 10px"
           lg3
           md4
-          sm12
+          sm6
           xs12
         >
           <Card

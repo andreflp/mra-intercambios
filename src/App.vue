@@ -46,6 +46,18 @@
   }
 }
 
+@media only screen and (max-width: 425px) {
+  .main-container {
+    padding: 0px 35px 100px 35px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-container {
+    padding: 0px 20px 100px 20px;
+  }
+}
+
 @keyframes coming {
   from {
     transform: translateX(-50px);

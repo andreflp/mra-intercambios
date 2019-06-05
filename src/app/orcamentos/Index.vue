@@ -1,6 +1,6 @@
 <template>
   <v-layout justify-center>
-    <v-flex xs7 mg-top>
+    <v-flex lg7 md10 sm11 xs11 mg-top>
       <DTable title="Orçamentos"/>
     </v-flex>
   </v-layout>

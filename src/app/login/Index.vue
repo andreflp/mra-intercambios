@@ -2,14 +2,14 @@
   <div>
     <Toolbar/>
     <v-layout wrap main-container style="margin-top: 80px;" v-if="!logado">
-      <v-flex xs5 input-space>
+      <v-flex lg5 md5 sm6 xs12 input-space form-left>
         <h1>Login</h1>
         <SignIn/>
       </v-flex>
-      <v-flex offset-xs1 divider-align>
+      <v-flex offset-xs1 divider-align v-if="divider">
         <v-divider vertical style></v-divider>
       </v-flex>
-      <v-flex xs5 input-space>
+      <v-flex lg5 md5 sm6 xs12 input-space form-right>
         <h1>Cadastre-se</h1>
         <SignUp/>
       </v-flex>
@@ -38,7 +38,8 @@ export default {
 
   data: () => ({
     logado: false,
-    snackBar: false
+    snackBar: false,
+    divider: true
   }),
 
   mounted() {
@@ -48,6 +49,11 @@ export default {
     } else {
       this.logado = false
     }
+
+    this.$nextTick(function() {
+      window.addEventListener("resize", this.getWindowWidth)
+      this.getWindowWidth()
+    })
   },
 
   created() {
@@ -57,7 +63,20 @@ export default {
   methods: {
     getLogado(logado) {
       this.logado = logado
+    },
+
+    getWindowWidth(event) {
+      let windowWidth = screen.width
+      if (windowWidth <= 768) {
+        this.divider = false
+      } else {
+        this.divider = true
+      }
     }
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.getWindowWidth)
   }
 }
 </script>
@@ -71,5 +90,15 @@ export default {
 .divider-align {
   margin-top: 120px;
   height: 600px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+  .form-left {
+    padding-right: 18px;
+  }
+
+  .form-right {
+    padding-left: 18px;
+  }
 }
 </style>

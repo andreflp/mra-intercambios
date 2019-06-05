@@ -37,10 +37,7 @@
         </v-card-title>
         <v-card-actions style="margin-top: -20px;" class="justify-center">
           <v-spacer></v-spacer>
-          <v-btn color="light-grey" @click="dialog = false">
-            <span style="color: #CD5350">Fechar</span>
-          </v-btn>
-          <v-btn color="#CD5350" dark @click="dialog = false">Orçamento</v-btn>
+          <v-btn color="#CD5350" dark @click="dialog = false">Fechar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

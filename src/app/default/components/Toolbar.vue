@@ -1,15 +1,22 @@
 <template>
-  <v-toolbar color="#CD5350" dark tabs app fixed>
-    <v-spacer></v-spacer>
-    <v-layout row wrap align-center style="margin-top: 5px;">
+  <v-toolbar color="#CD5350" :clipped-left="$vuetify.breakpoint.lgAndUp" dark tabs app fixed>
+    <v-spacer class="hidden-sm-and-down"></v-spacer>
+    <v-layout row wrap align-center>
       <v-toolbar-title style="margin-right: 20px;">MRA</v-toolbar-title>
       <v-flex class="text-xs-center">
-        <v-text-field flat label="Pesquisar" prepend-inner-icon="search" solo-inverted/>
+        <v-text-field
+          flat
+          label="Pesquisar"
+          class="hidden-sm-and-down"
+          hide-details
+          prepend-inner-icon="search"
+          solo-inverted
+        />
       </v-flex>
       <v-toolbar-items>
         <v-menu offset-x style="margin-left: 10px">
           <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on">
+            <v-btn icon v-on="on" class="hidden-sm-and-down">
               <v-icon style="font-size: 30px">account_circle</v-icon>
             </v-btn>
           </template>
